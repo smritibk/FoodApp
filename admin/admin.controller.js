@@ -91,7 +91,7 @@ router.post(
 
     //if password matches, generate token using jwt
     const payload = { email: admin.email };
-    const secretKey = "thisissecretkey";
+    const secretKey = process.env.SECRET_KEY;
     const token = jwt.sign(payload, secretKey);
 
     //send response
