@@ -31,6 +31,11 @@ const adminSchema = new mongoose.Schema({
     required: true,
     enum: ["male", "female", "other"],
   },
+  role: {
+    type: String,
+    required: true,
+    enum: ["chef", "customer"],
+  },
 });
 
 //create table
