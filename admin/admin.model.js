@@ -38,6 +38,12 @@ const adminSchema = new mongoose.Schema({
   },
 });
 
+adminSchema.methods.toJSON = function () {
+  let obj = this.toObject();
+  delete obj.password;
+  return obj;
+};
+
 //create table
 const Admin = mongoose.model("Admin", adminSchema);
 

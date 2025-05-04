@@ -45,6 +45,12 @@ const foodSchema = new mongoose.Schema({
   },
 });
 
+foodSchema.methods.toJSON = function () {
+  let obj = this.toObject();
+  delete obj.chefId;
+  return obj;
+};
+
 //create table
 const Food = mongoose.model("Food", foodSchema);
 
